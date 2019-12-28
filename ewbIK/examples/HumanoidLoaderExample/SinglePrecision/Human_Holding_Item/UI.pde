@@ -2,8 +2,7 @@
 public class UI {
 	PGraphics display, stencil;
 	PShader blurshader;
-	public boolean multipass = false; 
-	String pathUp = ".."+delim+".."+delim+".."+delim+".."+delim+"library"+delim;
+	public boolean multipass = false;
 
 	public UI(boolean multipassAllowed) {
 		currentDrawSurface = g; 
@@ -12,13 +11,13 @@ public class UI {
 			display = createGraphics(width, height, P3D);
 			stencil.noSmooth();
 			display.smooth(8);
-			blurshader = loadShader(pathUp+"shaders"+delim+"blur-sep.glsl");
+			blurshader = loadShader("shaders"+delim+"blur-sep.glsl");
 			blurshader.set("blurSize", 20);
 			blurshader.set("sigma", 9f);
 			multipass = true;  			
 		}
-		Kusudama.kusudamaShader = loadShader(pathUp+"shaders"+delim+"kusudama.glsl", pathUp+"shaders"+delim+"kusudama_vert.glsl");
-		Kusudama.kusudamaStencil = loadShader(pathUp+"shaders"+delim+"kusudama_stencil.glsl", pathUp+"shaders"+delim+"kusudama_vert.glsl");
+		Kusudama.kusudamaShader = loadShader("shaders"+delim+"kusudama.glsl", "shaders"+delim+"kusudama_vert.glsl");
+		Kusudama.kusudamaStencil = loadShader("shaders"+delim+"kusudama_stencil.glsl", "shaders"+delim+"kusudama_vert.glsl");
 
 		
 	}	
@@ -215,7 +214,7 @@ public class UI {
 			display = createGraphics(1200, 900, P3D);
 			stencil.noSmooth();
 			display.smooth(8);
-			blurshader = loadShader( "src/ewbik/processing/blur-sep.glsl");
+			blurshader = loadShader( "shaders/blur-sep.glsl");
 			blurshader.set("blurSize", 20);
 			blurshader.set("sigma", 9f);
 		}

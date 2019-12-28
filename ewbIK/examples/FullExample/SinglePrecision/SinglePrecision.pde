@@ -242,7 +242,7 @@ public void setup() {
     } else if(key == 's') {
       println("Saving");
       EWBIKSaver newSaver = new EWBIKSaver();
-      newSaver.saveArmature(humanArmature, ui.pathUp+delim+"armatures"+delim+"Humanoid.arm");      
+      newSaver.saveArmature(humanArmature, delim+"armatures"+delim+"Humanoid.arm");      
     }
   }
 
