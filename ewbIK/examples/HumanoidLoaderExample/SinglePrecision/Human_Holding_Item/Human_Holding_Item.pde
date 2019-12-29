@@ -23,7 +23,7 @@ public void setup() {
 	size(1200, 900, P3D);
 	ui =new UI(true);
 	String path = sketchPath() + File.separator + "data";
-	loadedArmature = EWBKIO.LoadArmature_singlePrecision(path+ui.pathUp+delim+"armatures"+delim+"Humanoid_Holding_Item.arm");
+	loadedArmature = EWBKIO.LoadArmature_singlePrecision(path+delim+"armatures"+delim+"Humanoid_Holding_Item.arm");
 	worlAxes = (Axes) loadedArmature.localAxes().getParentAxes(); 
 	if(worlAxes == null) { 
 		worlAxes = new Axes();
